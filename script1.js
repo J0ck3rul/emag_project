@@ -14,6 +14,7 @@ window.onload = function () {
     //Tue Sep 30 2014 ...
     var calendar = get_calendar(day_no, days);
     document.getElementById("calendar-month-year").innerHTML = month_name[month] + " " + year;
+    
     document.getElementById("calendar-dates").appendChild(calendar);
 }
 

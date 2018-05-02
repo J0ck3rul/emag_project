@@ -1,17 +1,19 @@
 #center_div
 {
   width: 130px;
-  height: 180px;
-  background-color:cornflowerblue;
+  height: 240px;
+  background-image: linear-gradient(#fff, #d3d3d3);
   color: #fff;
   border-radius: 5%;
-  box-shadow: 0 4px 4px 0 rgba(50, 50, 50, 0.4);
+ 
+
 }
 #center_div>p{
   padding: 10px 0;
   margin: 0;
   color: #fff;
   text-align: center;
+  color:black;
 
 }
 #p1{
@@ -24,4 +26,44 @@
   font-size:35px;
   padding-top: 10px;
   padding-bottom: 0;
+}
+#calendar{
+  width: 130px;
+  margin: 0;
+
+}
+
+
+.brb{
+  margin-left: 500px!important;
+  padding-top: 150px!important;
+}
+
+body{
+  background-image: linear-gradient(grey, #d3d3d3);
+}
+
+#calendar-container{
+    padding: 10px;
+    width: 210px;
+    height: 240px;
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Arial;
+    background-image: linear-gradient(#fff, #d3d3d3);
+}
+
+#calendar-container>div{
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+#calendar-month-year{
+    margin: 5px;
+}
+
+#calendar-dates>table>tr>td{
+    padding: 5px;
 }

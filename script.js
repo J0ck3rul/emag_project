@@ -1,8 +1,6 @@
 
 
-document.getElementById("calendar").style.width="50%";
-document.getElementById("calendar").style.margin="auto";
-document.getElementById("calendar").style.padding="10%";
+
 //am centrat div-ul
 
 var center_div = document.createElement("div");
@@ -39,4 +37,4 @@ function setText(id, val)
     document.getElementById(id).innerHTML = val;
 };
 
-window.onload = calenar;
+window.onload = calenar();

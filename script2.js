@@ -1,32 +1,27 @@
 
-var prev=0;
-var prevYear=0;
-var next=0;
+var prev = 0;
+var prevYear = 0;
+var next = 0;
 
-function anterior()
-{   
+function anterior() {
     prev++;
     var header = document.getElementById("calendar-month-year");
     header.innerHTML = " ";
     var tabl = document.getElementById("calendar-dates");
-    while(tabl.firstChild)
-    {
-        tabl.removeChild(tabl.firstChild);
-    }
-    
+    tabl.innerHTML = "";
+
     var d = new Date();
     var month_name = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    var month = d.getMonth(); 
+    var month = d.getMonth();
     var year = d.getFullYear();
-    if(prev>12)
-    prev = prev%12;
-    month = month-prev;
-   
-    if(month<0)
-        {
-           month = 12+month;
-           year--;
-        }
+    if (prev > 12)
+        prev = prev % 12;
+    month = month - prev;
+
+    if (month < 0) {
+        month = 12 + month;
+        year--;
+    }
 
     var first_date = month_name[month] + " " + 1 + " " + year;
     var tmp = new Date(first_date).toDateString();
@@ -36,25 +31,23 @@ function anterior()
     var days = new Date(year, month + 1, 0).getDate();    //30
 
 
-    
+
 
     var calendar = get_calendar(day_no, days);
     document.getElementById("calendar-month-year").innerHTML = month_name[month] + " " + year;
-    
+
     document.getElementById("calendar-dates").appendChild(calendar);
 
 };
 
-function now()
-{   
+function now() {
     var header = document.getElementById("calendar-month-year");
     header.innerHTML = " ";
     var tabl = document.getElementById("calendar-dates");
-    while(tabl.firstChild)
-    {
+    while (tabl.firstChild) {
         tabl.removeChild(tabl.firstChild);
     }
-    
+
     var d = new Date();
     var month_name = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     var month = d.getMonth();   //0-11
@@ -70,23 +63,20 @@ function now()
     //Tue Sep 30 2014 ...
     var calendar = get_calendar(day_no, days);
     document.getElementById("calendar-month-year").innerHTML = month_name[month] + " " + year;
-    
+
     document.getElementById("calendar-dates").appendChild(calendar);
 }
 
-function urm()
-{ 
-     next++;
-    if(next==12)
-    {
+function urm() {
+    next++;
+    if (next == 12) {
         year++;
-        next=0;
+        next = 0;
     }
     var header = document.getElementById("calendar-month-year");
     header.innerHTML = " ";
     var tabl = document.getElementById("calendar-dates");
-    while(tabl.firstChild)
-    {
+    while (tabl.firstChild) {
         tabl.removeChild(tabl.firstChild);
     }
 
@@ -95,7 +85,7 @@ function urm()
     var month = d.getMonth();   //0-11
     var year = d.getFullYear(); //2014
 
-month = month-prev+next;
+    month = month - prev + next;
 
     var first_date = month_name[month] + " " + 1 + " " + year;
     //September 1 2014
@@ -108,7 +98,7 @@ month = month-prev+next;
     //Tue Sep 30 2014 ...
     var calendar = get_calendar(day_no, days);
     document.getElementById("calendar-month-year").innerHTML = month_name[month] + " " + year;
-    
+
     document.getElementById("calendar-dates").appendChild(calendar);
 
 }

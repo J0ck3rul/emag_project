@@ -4,7 +4,7 @@ window.onload = function () {
     var month = d.getMonth();   //0-11
     var year = d.getFullYear(); //2014
     var first_date = month_name[month] + " " + 1 + " " + year;
-    //September 1 2014
+    //September 1 2018
     var tmp = new Date(first_date).toDateString();
     //Mon Sep 01 2014 ...
     var first_day = tmp.substring(0, 3);    //Mon
